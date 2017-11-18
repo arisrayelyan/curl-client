@@ -139,7 +139,7 @@ class Client implements HttpClient, HttpAsyncClient
 
         $response = $responseBuilder->getResponse();
         $response->getBody()->seek(0);
-
+        curl_close($this->handle);
         return $response;
     }
 
